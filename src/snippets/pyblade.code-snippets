@@ -6,9 +6,9 @@
     },
 
     "PyBlade Foreach Loop": {
-      "prefix": "foreach",
-      "body": ["@foreach(${1:items} as ${2:item})", "\t$0", "@endforeach"],
-      "description": "Insert a PyBlade foreach loop"
+      "prefix": "for",
+      "body": ["@for(${1:item} in ${2:items})", "\t$0", "@endfor"],
+      "description": "Insert a PyBlade for loop"
     },
     
     "PyBlade Include": {
