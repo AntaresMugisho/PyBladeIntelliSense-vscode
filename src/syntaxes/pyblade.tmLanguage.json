@@ -1,0 +1,25 @@
+{
+    "scopeName": "source.pyblade",
+    "patterns": [
+      {
+        "include": "text.html.basic"
+      },
+      {
+        "name": "keyword.control.pyblade",
+        "match": "@\\w+"
+      },
+      {
+        "name": "comment.block.pyblade",
+        "begin": "@\\*",
+        "end": "\\*@"
+      },
+      {
+        "name": "variable.other.pyblade",
+        "match": "\\$\\w+"
+      }
+    ],
+    "repository": {},
+    "fileTypes": ["pyblade"],
+    "name": "PyBlade"
+  }
+  

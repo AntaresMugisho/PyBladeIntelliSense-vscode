@@ -1,0 +1,20 @@
+{
+    "PyBlade If Statement": {
+      "prefix": "if",
+      "body": ["@if(${1:condition})", "\t$0", "@endif"],
+      "description": "Insert a PyBlade if statement"
+    },
+
+    "PyBlade Foreach Loop": {
+      "prefix": "foreach",
+      "body": ["@foreach(${1:items} as ${2:item})", "\t$0", "@endforeach"],
+      "description": "Insert a PyBlade foreach loop"
+    },
+    
+    "PyBlade Include": {
+      "prefix": "include",
+      "body": ["@include('${1:partial}')"],
+      "description": "Insert a PyBlade include directive"
+    }
+  }
+  
