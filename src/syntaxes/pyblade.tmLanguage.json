@@ -1,28 +1,68 @@
 {
-    "scopeName": "source.pyblade",
-    "patterns": [
-      {
-        "name": "keyword.control.pyblade",
-        "match": "@\\w+"
-      },
+  "name": "PyBlade",
+  "repository": {},
+  "fileTypes": ["pyblade"],
+  "scopeName": "source.pyblade",
+  "patterns": [
+    {
+      "name": "keyword.control.pyblade",
+      "match": "@(auth|url|guest|anonymous|static|translate|extends|yield|section|block|include|else|endif|endfor|endswitch|endauth|endguest|endanonymous|livebladeScripts|liveblade_scripts)"
+    },
 
-      {
-        "name": "comment.block.pyblade",
-        "begin": "@\\*",
-        "end": "\\*@"
+    {
+      "contentName": "source.python",
+      "begin": "@(if|elif|switch|case|for|class|url|active|checked|selected|required)\\s*\\(",
+      "beginCaptures": {
+        "0": { "name": "keyword.control.pyblade" }
       },
-      
-      {
-        "name": "variable.other.pyblade",
-        "match": "\\$\\w+"
+      "end": "\\)",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.condition.end.pyblade" }
       },
+      "patterns": [
+        { "include": "source.python" }
+      ]
+    },
 
-      {
-        "include": "text.html.basic"
-      }
-    ],
-    "repository": {},
-    "fileTypes": ["pyblade"],
-    "name": "PyBlade"
-  }
-  
+    {
+      "name": "pyblade.output.expression",
+      "begin": "\\{\\{",
+      "beginCaptures": {
+        "0": { "name": "punctuation.section.expression.begin.pyblade" }
+      },
+      "end": "\\}\\}",
+      "endCaptures": {
+        "0": { "name": "punctuation.section.expression.end.pyblade" }
+      },
+      "patterns": [
+        { "include": "source.python" }
+      ]
+    },
+
+
+    {
+      "name": "pyblade.output.raw",
+      "begin": "\\{!!",
+      "beginCaptures": {
+        "0": { "name": "punctuation.section.raw.begin.pyblade" }
+      },
+      "end": "!!\\}",
+      "endCaptures": {
+        "0": { "name": "punctuation.section.raw.end.pyblade" }
+      },
+      "patterns": [
+        { "include": "source.python" }
+      ]
+    },
+
+    {
+      "name": "comment.block.pyblade",
+      "begin": "\\{#",
+      "end": "#\\}"
+    },
+
+    {
+      "include": "text.html.basic"
+    }
+  ]
+}
