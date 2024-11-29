@@ -1,58 +1,11 @@
 {
   "name": "PyBlade",
-  "repository": {},
-  "fileTypes": ["pyblade"],
-  "scopeName": "source.pyblade",
+  "scopeName": "text.html.pyblade",
+  "repository": {}, 
+  "fileTypes": ["html", "pyblade"],
   "patterns": [
     {
-      "name": "keyword.control.pyblade",
-      "match": "@(auth|url|guest|anonymous|static|translate|extends|yield|section|block|include|else|endif|endfor|endswitch|endauth|endguest|endanonymous|livebladeScripts|liveblade_scripts)"
-    },
-
-    {
-      "contentName": "source.python",
-      "begin": "@(if|elif|switch|case|for|class|url|active|checked|selected|required)\\s*\\(",
-      "beginCaptures": {
-        "0": { "name": "keyword.control.pyblade" }
-      },
-      "end": "\\)",
-      "endCaptures": {
-        "0": { "name": "punctuation.definition.condition.end.pyblade" }
-      },
-      "patterns": [
-        { "include": "source.python" }
-      ]
-    },
-
-    {
-      "name": "pyblade.output.expression",
-      "begin": "\\{\\{",
-      "beginCaptures": {
-        "0": { "name": "punctuation.section.expression.begin.pyblade" }
-      },
-      "end": "\\}\\}",
-      "endCaptures": {
-        "0": { "name": "punctuation.section.expression.end.pyblade" }
-      },
-      "patterns": [
-        { "include": "source.python" }
-      ]
-    },
-
-
-    {
-      "name": "pyblade.output.raw",
-      "begin": "\\{!!",
-      "beginCaptures": {
-        "0": { "name": "punctuation.section.raw.begin.pyblade" }
-      },
-      "end": "!!\\}",
-      "endCaptures": {
-        "0": { "name": "punctuation.section.raw.end.pyblade" }
-      },
-      "patterns": [
-        { "include": "source.python" }
-      ]
+      "include": "text.html.basic"
     },
 
     {
@@ -62,7 +15,25 @@
     },
 
     {
-      "include": "text.html.basic"
+      "begin": "@(url|trans|translate|class|active|checked|selected|required|livebladeScripts|liveblade_scripts|break|continue)\\(",
+      "end": "\\)",
+      "captures":{
+        "0": {"name": "support.function.pyblade"}
+      },
+      "contentName": "source.python",
+      "patterns": [
+        {
+          "include": "source.python"
+        }
+      ]
+    },
+
+   
+
+    {
+      "name": "keyword.control.pyblade",
+      "match": "@(if|elif|else|unless|switch|case|for|break|continue|auth|guest|anonymous|static|extends|yield|section|block|include|endif|endfor|endswitch|endauth|endguest|endanonymous)"
     }
+
   ]
 }

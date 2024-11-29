@@ -37,7 +37,7 @@
       {
         "id": "pyblade",
         "aliases": ["PyBlade", "pyblade"],
-        "extensions": [".pyblade"],
+        "extensions": [".html"],
         "configuration": "./src/languages/pyblade.configuration.json"
       }
     ],
@@ -45,7 +45,7 @@
     "grammars": [
       {
         "language": "pyblade",
-        "scopeName": "source.pyblade",
+        "scopeName": "text.html.pyblade",
         "path": "./src/syntaxes/pyblade.tmLanguage.json"
       }
     ],
@@ -53,7 +53,7 @@
     "snippets": [
       {
         "language": "pyblade",
-        "path": "./src/snippets/pyblade.code-snippets"
+        "path": "./src/snippets/pyblade.snippets"
       }
     ],
 
@@ -61,7 +61,7 @@
       "emmet.includeLanguages": {
         "pyblade": "html"
       }
-  }
+    }
   },
 
   "scripts": {
