@@ -15,7 +15,40 @@
     },
 
     {
-      "begin": "@(url|trans|translate|class|active|checked|selected|required|livebladeScripts|liveblade_scripts|break|continue)\\(",
+      "begin": "@(if|elif|for|active|checked|selected|required|break|continue)\\(",
+      "end": "\\)",
+      "captures":{
+        "0":{"name":"keyword.control.pyblade"}
+      },
+      "contentName": "source.python",
+      "patterns": [
+        {
+          "include": "source.python"
+        }
+      ]
+
+    },
+
+    {
+      "begin": "@(extends|yield|section|block|include)\\(",
+      "end": "\\)",
+      "captures":{
+        "0":{"name":"keyword.control.pyblade"}
+      },
+      "patterns": [
+        {
+          "name": "string.quoted.single.pyblade",
+          "match": "'[^']*'"
+        },
+        {
+          "name": "string.quoted.double.pyblade",
+          "match": "\"[^\"]*\""
+        }
+      ]
+    },
+
+    {
+      "begin": "@(url|static|trans|translate|class|style|field|livebladeScripts|liveblade_scripts)\\(",
       "end": "\\)",
       "captures":{
         "0": {"name": "support.function.pyblade"}
@@ -28,12 +61,9 @@
       ]
     },
 
-   
-
     {
       "name": "keyword.control.pyblade",
-      "match": "@(if|elif|else|unless|switch|case|for|break|continue|auth|guest|anonymous|static|extends|yield|section|block|include|endif|endfor|endswitch|endauth|endguest|endanonymous)"
+      "match": "@(if|elif|else|unless|switch|case|for|break|continue|auth|guest|anonymous|required|selected|checked|active|static|extends|yield|section|block|include|endif|endfor|endswitch|endauth|endguest|endanonymous)"
     }
-
   ]
 }
