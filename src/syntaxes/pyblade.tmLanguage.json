@@ -1,69 +1,77 @@
 {
   "name": "PyBlade",
-  "scopeName": "text.html.pyblade",
+  "scopeName": "source.pyblade",
   "repository": {}, 
   "fileTypes": ["html", "pyblade"],
-  "patterns": [
-    {
-      "include": "text.html.basic"
-    },
+    "patterns":[
 
-    {
-      "name": "comment.block.pyblade",
-      "begin": "\\{#",
-      "end": "#\\}"
-    },
-
-    {
-      "begin": "@(if|elif|for|active|checked|selected|required|break|continue)\\(",
-      "end": "\\)",
-      "captures":{
-        "0":{"name":"keyword.control.pyblade"}
+      {
+        "name": "comment.block.pyblade",
+        "begin": "\\{#",
+        "end": "#\\}"
       },
-      "contentName": "source.python",
-      "patterns": [
-        {
-          "include": "source.python"
-        }
-      ]
-
-    },
-
-    {
-      "begin": "@(extends|yield|section|block|include)\\(",
-      "end": "\\)",
-      "captures":{
-        "0":{"name":"keyword.control.pyblade"}
+  
+      {
+        "begin": "(\\{\\{|\\{!!)",
+        "end": "(\\}\\}|!!\\})",
+        "contentName": "source.python",
+        "patterns":[
+          {"include": "source.python"}
+        ]
       },
-      "patterns": [
-        {
-          "name": "string.quoted.single.pyblade",
-          "match": "'[^']*'"
+  
+      {
+        "begin": "@(if|elif|for|active|checked|selected|required|break|continue)\\(",
+        "end": "\\)",
+        "captures":{
+          "0":{"name":"keyword.control.pyblade"}
         },
-        {
-          "name": "string.quoted.double.pyblade",
-          "match": "\"[^\"]*\""
-        }
-      ]
-    },
-
-    {
-      "begin": "@(url|static|trans|translate|class|style|field|livebladeScripts|liveblade_scripts)\\(",
-      "end": "\\)",
-      "captures":{
-        "0": {"name": "support.function.pyblade"}
+        "contentName": "source.python",
+        "patterns": [
+          {
+            "include": "source.python"
+          }
+        ]
       },
-      "contentName": "source.python",
-      "patterns": [
-        {
-          "include": "source.python"
-        }
-      ]
-    },
+  
+      {
+        "begin": "@(extends|yield|section|block|include)\\(",
+        "end": "\\)",
+        "captures":{
+          "0":{"name":"keyword.control.pyblade"}
+        },
+        "patterns": [
+          {
+            "name": "string.quoted.single.pyblade",
+            "match": "'[^']*'"
+          },
+          {
+            "name": "string.quoted.double.pyblade",
+            "match": "\"[^\"]*\""
+          }
+        ]
+      },
+  
+      {
+        "begin": "@(url|static|trans|translate|class|style|field|livebladeScripts|liveblade_scripts)\\s*\\(",
+        "end": "\\)",
+        "captures":{
+          "0": {"name": "support.function.pyblade"}
+        },
+        "contentName": "source.python",
+        "patterns": [
+          {
+            "include": "source.python"
+          }
+        ]
+      },
+  
+      {
+        "name": "keyword.control.pyblade",
+        "match": "@(if|elif|else|unless|switch|case|for|break|continue|auth|guest|anonymous|required|selected|checked|active|static|extends|yield|section|block|include|endif|endfor|endswitch|endauth|endguest|endanonymous)"
+      }, 
 
-    {
-      "name": "keyword.control.pyblade",
-      "match": "@(if|elif|else|unless|switch|case|for|break|continue|auth|guest|anonymous|required|selected|checked|active|static|extends|yield|section|block|include|endif|endfor|endswitch|endauth|endguest|endanonymous)"
-    }
-  ]
+      {"include": "text.html.basic" }
+      
+    ]
 }

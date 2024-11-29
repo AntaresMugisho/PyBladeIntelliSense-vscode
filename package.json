@@ -24,7 +24,7 @@
     "Snippets"
   ],
   "activationEvents": [],
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
@@ -45,8 +45,11 @@
     "grammars": [
       {
         "language": "pyblade",
-        "scopeName": "text.html.pyblade",
-        "path": "./src/syntaxes/pyblade.tmLanguage.json"
+        "scopeName": "source.pyblade",
+        "path": "./src/syntaxes/pyblade.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.python": "python"
+        }
       }
     ],
 
