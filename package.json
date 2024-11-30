@@ -47,7 +47,7 @@
         "language": "pyblade",
         "scopeName": "source.pyblade",
         "path": "./src/syntaxes/pyblade.tmLanguage.json",
-        "embeddedLanguages": {
+         "embeddedLanguages": {
           "source.python": "python"
         }
       }
@@ -64,7 +64,10 @@
       "emmet.includeLanguages": {
         "pyblade": "html"
       }
-    }
+    },
+
+    "activationEvents": ["onLanguage:pyblade"],
+    "main": "./dist/extension.js"
   },
 
   "scripts": {
