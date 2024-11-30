@@ -21,7 +21,7 @@
       },
   
       {
-        "begin": "@(if|elif|for|active|checked|selected|required|break|continue)\\(",
+        "begin": "@(if|elif|for|active|checked|selected|required|error|break|continue)\\(",
         "end": "\\)",
         "captures":{
           "0":{"name":"keyword.control.pyblade"}
@@ -35,7 +35,7 @@
       },
   
       {
-        "begin": "@(extends|yield|section|block|include)\\(",
+        "begin": "@(extends|yield|section|block|include|method)\\(",
         "end": "\\)",
         "captures":{
           "0":{"name":"keyword.control.pyblade"}
@@ -53,7 +53,7 @@
       },
   
       {
-        "begin": "@(url|static|trans|translate|class|style|field|livebladeScripts|liveblade_scripts)\\s*\\(",
+        "begin": "@(url|static|trans|translate|class|props|style|field|livebladeScripts|liveblade_scripts)\\s*\\(",
         "end": "\\)",
         "captures":{
           "0": {"name": "support.function.pyblade"}
@@ -68,7 +68,7 @@
   
       {
         "name": "keyword.control.pyblade",
-        "match": "@(if|elif|else|unless|switch|case|for|break|continue|auth|guest|anonymous|required|selected|checked|active|static|extends|yield|section|block|include|endif|endfor|endswitch|endauth|endguest|endanonymous)"
+        "match": "@(if|elif|else|unless|switch|case|default|for|break|continue|auth|guest|anonymous|csrf|method|field|class|props|required|selected|checked|active|static|extends|yield|section|block|include|endif|endfor|endswitch|endauth|endguest|endanonymous|enderror)"
       }, 
 
       {"include": "text.html.basic" }
