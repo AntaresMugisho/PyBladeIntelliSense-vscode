@@ -140,6 +140,18 @@
     "description": "PyBlade @for ... @empty loop directive"
   },
 
+  "PyBlade break directive": {
+    "prefix": "break",
+    "body": ["@break"],
+    "description": "PyBlade @break directive"
+  },
+
+  "PyBlade continue directive": {
+    "prefix": "continue",
+    "body": ["@continue"],
+    "description": "PyBlade @continue directive"
+  },
+
 
 
   "PyBlade url": {
