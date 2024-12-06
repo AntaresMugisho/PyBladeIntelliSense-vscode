@@ -1,0 +1,92 @@
+{
+  "name": "pyblade-intellisense",
+  "displayName": "PyBlade IntelliSense",
+  "description": "PyBlade IntelliSense provides tools like syntax highlighting, code snippets, and validation to enhance development with PyBlade templates across editors and IDEs.",
+  "version": "0.0.1",
+  "publisher": "antares",
+  "author": {
+    "name": "Antares Mugisho",
+    "email": "antaresmugisho@gmail.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "keywords": [
+    "pyblade",
+    "python",
+    "django",
+    "snippets",
+    "highlight"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "activationEvents": [],
+  "main": "../dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pyblade-intellisense.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "languages": [
+      {
+        "id": "pyblade",
+        "aliases": [
+          "PyBlade",
+          "pyblade"
+        ],
+        "extensions": [
+          ".html"
+        ],
+        "configuration": "./languages/pyblade.configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "pyblade",
+        "scopeName": "source.pyblade",
+        "path": "./syntaxes/pyblade.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.python": "python"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "pyblade",
+        "path": "./snippets/pyblade.snippets.json"
+      }
+    ],
+    "configurationDefaults": {
+      "emmet.includeLanguages": {
+        "pyblade": "html"
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.54.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

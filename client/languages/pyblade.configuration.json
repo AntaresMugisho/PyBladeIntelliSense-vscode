@@ -1,0 +1,43 @@
+{
+    "comments": {
+      "blockComment": ["{#", "#}"]
+    },
+
+    "brackets": [
+      ["(", ")"],
+      ["{", "}"],
+      ["{{",    "}}"],
+      ["{!!", "!!}"]
+    ],
+
+    "autoClosingPairs": [
+        { "open": "'", "close": "'", "notIn": ["string", "comment"] },
+        { "open": "`", "close": "`", "notIn": ["string", "comment"]  },
+        { "open": "\"", "close": "\"", "notIn": ["string", "comment"]  },
+        { "open": "\"\"\"", "close": "\"\"\"", "notIn": ["string"] },
+        { "open": "(", "close": ")" },
+        { "open": "[", "close": "]" },
+        { "open": "{", "close": "}" },
+        { "open": "{{", "close": "}}" },
+        { "open": "{!!", "close": "!!}" },
+        { "open": "{#", "close": "#}" }
+    ],
+
+    "surroundingPairs": [
+      { "open": "{", "close": "}" },
+      { "open": "[", "close": "]" },
+      { "open": "(", "close": ")" },
+      { "open": "'", "close": "'" },
+      { "open": "\"", "close": "\"" },
+      { "open": "`", "close": "`" },
+      { "open": "\"\"\"", "close": "\"\"\""}
+    ],
+
+    "folding": {
+      "markers": {
+        "start": "^\\s*@(?:if|switch|for|while|section|block|auth|guest)\\b.*$",
+        "end": "^\\s*@(?:endif|endswitch|endfor|endwhile|endsection)\\b.*$"
+      }
+    }
+  }
+  
