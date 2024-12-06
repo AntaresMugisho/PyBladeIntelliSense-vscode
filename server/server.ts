@@ -8,7 +8,6 @@ import {
     TextDocumentSyncKind,
 } from 'vscode-languageserver/node';
 import { TextDocument } from 'vscode-languageserver-textdocument';
-import { getCompletionItems } from './handlers';
 
 // Create a connection
 const connection = createConnection(ProposedFeatures.all);
@@ -27,41 +26,10 @@ connection.onInitialize((_params: InitializeParams) => {
     };
 });
 
-// Do completion
-connection.onCompletion(() => {
-    return getCompletionItems();
-});
-
-
-// Syntax Check
+// Handle document changes
 documents.onDidChangeContent((change) => {
-    validateTextDocument(change.document);
-});
-
-async function validateTextDocument(textDocument: TextDocument): Promise<void> {
-    const text = textDocument.getText();
-    const diagnostics: Diagnostic[] = [];
-
-    const regex = /@(\w+)/g;
-    let match: RegExpExecArray | null;
-
-    while ((match = regex.exec(text)) !== null) {
-        const directive = match[1];
-        if (!['if', 'elif', 'extends', 'yield', 'switch'].includes(directive)) {
-            diagnostics.push({
-                severity: DiagnosticSeverity.Error,
-                range: {
-                    start: textDocument.positionAt(match.index),
-                    end: textDocument.positionAt(match.index + match[0].length),
-                },
-                message: `Unknown directive: @${directive}`,
-                source: 'PyBlade',
-            });
-        }
-    }
-
-    connection.sendDiagnostics({ uri: textDocument.uri, diagnostics });
-}
+    connection.console.log(`Content changed in: ${change.document.uri}`);
+  });
 
 // Listen to document events
 documents.listen(connection);

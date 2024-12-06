@@ -51,7 +51,6 @@
           }
         ]
       },
-  
       {
         "begin": "@(url|static|trans|translate|class|props|style|field|livebladeScripts|liveblade_scripts)\\s*\\(",
         "end": "\\)",

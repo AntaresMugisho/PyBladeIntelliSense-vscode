@@ -1,71 +1,104 @@
-# pyblade-intellisense README
+# PyBlade VS Code Extension
 
-This is the README for your extension "pyblade-intellisense". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Welcome to the **PyBlade VS Code Extension**, the ultimate tool to supercharge your experience with the PyBlade template engine for Python! This extension is designed to provide a seamless, developer-friendly workflow for creating dynamic, secure, and expressive templates in Django or other Python web frameworks.
 
 ---
 
-## Following extension guidelines
+## Features
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+### 1. **IntelliSense for PyBlade Directives**
+- **Auto-Completion**: Get real-time suggestions for PyBlade directives like `@if`, `@for`, `@csrf`, and more.
+- **Context-Aware Suggestions**: IntelliSense adapts to your code context, ensuring relevant suggestions for logic, loops, and conditions.
+- **Custom Directives**: Automatically detects custom directives defined in your project.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+### 2. **Syntax Highlighting**
+- Beautiful and precise syntax highlighting for all PyBlade-specific syntax.
+- Supports nested directives and complex expressions, making your code more readable.
 
-## Working with Markdown
+### 3. **Snippets for Rapid Development**
+- Quick access to commonly used directives and structures:
+  - `@if-else` blocks
+  - `@foreach` loops
+  - `@component` declarations
+- Editable snippet templates to suit your project’s needs.
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+### 4. **Error Highlighting**
+- Real-time error detection for unclosed directives or invalid syntax.
+- Inline error messages to ensure your templates work flawlessly.
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+### 5. **Live Preview Integration**
+- Instantly preview your rendered templates in the browser (requires a configured Python project).
+- Automatic reload on file changes for faster iteration.
 
-## For more information
+### 6. **Code Navigation**
+- Quickly jump to the definitions of components, directives, and included templates.
+- Hover tooltips display useful documentation and examples.
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+### 7. **Customizable Configuration**
+- Full control over the extension’s behavior, such as:
+  - Toggling specific features (e.g., live preview, error highlighting).
+  - Customizing themes for syntax highlighting.
 
-**Enjoy!**
+---
+
+## Installation
+
+1. Open Visual Studio Code.
+2. Go to the Extensions Marketplace (Ctrl+Shift+X or Cmd+Shift+X).
+3. Search for **PyBlade** and click **Install**.
+4. Configure your Python project to use the PyBlade template engine.
+
+---
+
+## Getting Started
+
+1. **Enable PyBlade in Your Project**: 
+   Ensure your project is configured to use PyBlade.
+
+
+2. **Start Writing Templates**: 
+   Open any `.html` file and enjoy IntelliSense, syntax highlighting, and snippets.
+
+3. **Customize the Extension**:
+   Use the **PyBlade** section in the VS Code settings to adjust preferences.
+
+---
+
+## Keybindings
+
+- **Insert Directive Snippet**: `Ctrl+Space` (or `Cmd+Space`) inside a PyBlade template.
+- **Jump to Component**: `Ctrl+Click` (or `Cmd+Click`) on a component name.
+- **Live Preview**: `Ctrl+Shift+P` → Search for "PyBlade: Preview Template".
+
+---
+
+## Future Enhancements
+
+We are continually improving the PyBlade VS Code Extension! Planned updates include:
+- **Advanced Debugging Tools** for templates.
+- **Framework-Specific Enhancements** for Flask and others.
+- **Community-Suggested Features**—share your ideas with us!
+
+---
+
+## Contributing
+
+We welcome contributions to enhance the PyBlade VS Code Extension! Feel free to:
+- Report bugs or suggest features via [GitHub Issues](https://github.com/AntaresMugisho/pyblade-intellisense-vscode).
+- Submit pull requests to our [GitHub Repository](https://github.com/AntaresMugisho/pyblade-intellisense-vscode).
+
+---
+
+## License
+
+This extension is open-source software, licensed under the [MIT License](LICENSE). 
+
+---
+
+## Support
+
+For assistance, feedback, or feature requests, please contact us at [antaresmugisho@gmail.com](mailto:antaresmugisho@gmail.com). 
+
+---
+
+Let **PyBlade IntelliSense**  make your PyBlade projects a joy to work on! 🚀

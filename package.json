@@ -1,35 +1,30 @@
 {
   "name": "pyblade-intellisense",
-  "displayName": "PyBlade Intellisense",
-  "description": "PyBlade Intellisense provides tools like syntax highlighting, code snippets, and validation to enhance development with PyBlade templates across editors and IDEs.",
+  "displayName": "PyBlade IntelliSense",
+  "description": "PyBlade IntelliSense provides tools like syntax highlighting, code snippets, and validation to enhance development with PyBlade templates across editors and IDEs.",
   "version": "0.0.1",
   "publisher": "antares",
   "author": {
-      "name": "Antares Mugisho",
-      "email": "antaresmugisho@gmail.com"
+    "name": "Antares Mugisho",
+    "email": "antaresmugisho@gmail.com"
   },
-
   "license": "MIT",
   "engines": {
     "vscode": "^1.54.0"
   },
-
   "keywords": [
     "pyblade",
     "python",
     "django",
-    "flask",
-    "highlighter"
+    "snippets",
+    "highlight"
   ],
-  
   "categories": [
     "Programming Languages",
     "Snippets"
   ],
-
   "activationEvents": [],
-  "main": "./dist/extension.js",
-  
+  "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
@@ -37,41 +32,41 @@
         "title": "Hello World"
       }
     ],
-
     "languages": [
       {
         "id": "pyblade",
-        "aliases": ["PyBlade", "pyblade"],
-        "extensions": [".html"],
-        "configuration": "./src/languages/pyblade.configuration.json"
+        "aliases": [
+          "PyBlade",
+          "pyblade"
+        ],
+        "extensions": [
+          ".html"
+        ],
+        "configuration": "./client/languages/pyblade.configuration.json"
       }
     ],
-
     "grammars": [
       {
         "language": "pyblade",
         "scopeName": "source.pyblade",
-        "path": "./src/syntaxes/pyblade.tmLanguage.json",
-         "embeddedLanguages": {
+        "path": "./client/syntaxes/pyblade.tmLanguage.json",
+        "embeddedLanguages": {
           "source.python": "python"
         }
       }
     ],
-
     "snippets": [
       {
         "language": "pyblade",
-        "path": "./src/snippets/pyblade.snippets.json"
+        "path": "./client/snippets/pyblade.snippets.json"
       }
     ],
-
     "configurationDefaults": {
       "emmet.includeLanguages": {
         "pyblade": "html"
       }
     }
   },
-
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -81,14 +76,19 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.54.0",
     "@types/mocha": "^10.0.9",
     "@types/node": "20.x",
+    "@types/vscode": "^1.54.0",
     "@typescript-eslint/eslint-plugin": "^8.10.0",
     "@typescript-eslint/parser": "^8.7.0",
-    "eslint": "^9.13.0",
-    "typescript": "^5.6.3",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
   }
 }
