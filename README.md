@@ -84,8 +84,8 @@ We are continually improving the PyBlade VS Code Extension! Planned updates incl
 ## Contributing
 
 We welcome contributions to enhance the PyBlade VS Code Extension! Feel free to:
-- Report bugs or suggest features via [GitHub Issues](https://github.com/AntaresMugisho/pyblade-intellisense-vscode).
-- Submit pull requests to our [GitHub Repository](https://github.com/AntaresMugisho/pyblade-intellisense-vscode).
+- Report bugs or suggest features via [GitHub Issues](https://github.com/AntaresMugisho/PyBladeIntelliSense-vscode/issues).
+- Submit pull requests to our [GitHub Repository](https://github.com/AntaresMugisho/PyBladeIntelliSense-vscode).
 
 ---
 

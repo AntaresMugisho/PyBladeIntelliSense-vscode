@@ -4,6 +4,10 @@
   "description": "PyBlade IntelliSense provides tools like syntax highlighting, code snippets, and validation to enhance development with PyBlade templates across editors and IDEs.",
   "version": "0.0.1",
   "publisher": "antares",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AntaresMugisho/PyBladeIntelliSense-vscode.git"
+  },
   "author": {
     "name": "Antares Mugisho",
     "email": "antaresmugisho@gmail.com"
