@@ -28,14 +28,8 @@
     "Snippets"
   ],
   "activationEvents": [],
-  "main": "./out/extension.js",
+  "main": "./out/client/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "pyblade-intellisense.helloWorld",
-        "title": "Hello World"
-      }
-    ],
     "languages": [
       {
         "id": "pyblade",
