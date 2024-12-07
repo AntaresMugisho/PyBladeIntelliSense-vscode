@@ -17,8 +17,8 @@ Welcome to the **PyBlade VS Code Extension**, the ultimate tool to supercharge y
 
 ### 3. **Snippets for Rapid Development**
 - Quick access to commonly used directives and structures:
-  - `@if-else` blocks
-  - `@foreach` loops
+  - `@ifelse` blocks
+  - `@for` loops
   - `@component` declarations
 - Editable snippet templates to suit your project’s needs.
 
@@ -41,14 +41,6 @@ Welcome to the **PyBlade VS Code Extension**, the ultimate tool to supercharge y
 
 ---
 
-## Installation
-
-1. Open Visual Studio Code.
-2. Go to the Extensions Marketplace (Ctrl+Shift+X or Cmd+Shift+X).
-3. Search for **PyBlade** and click **Install**.
-4. Configure your Python project to use the PyBlade template engine.
-
----
 
 ## Getting Started
 

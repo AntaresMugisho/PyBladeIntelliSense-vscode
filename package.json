@@ -27,6 +27,7 @@
     "Programming Languages",
     "Snippets"
   ],
+  "icon": "assets/icon.png",
   "activationEvents": [],
   "main": "./out/client/extension.js",
   "contributes": {
